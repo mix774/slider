@@ -21,6 +21,15 @@ downBtn.addEventListener('click', () => {
 	changeSlide('down')
 })
 
+//добаление слушателя события, который вызывает функцию, меняющую слайды, на нажатие стрелок
+document.addEventListener('keydown', event => {
+	if (event.key === 'ArrowUp') {
+		changeSlide('up')
+	} else if (event.key === 'ArrowDown') {
+		changeSlide('down')
+	}
+})
+
 //функция, меняющая слайды
 function changeSlide(direction) { //в аргументы передается направление 
 	if (direction === 'up') { //если вверх, то значение активного слайда инкрементируется
